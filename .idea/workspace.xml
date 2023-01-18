@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d00243-513a-4ea7-941a-eaffbfbded83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Parking/entidades/abono.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parking/entidades/enum/estadoPlaza.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parking/entidades/enum/tipoV.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parking/entidades/plazaTipo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ParkingApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/abonado.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/entidades/abonado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/abono.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/cliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/entidades/cliente.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/plaza.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/entidades/plaza.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/entidades/ticket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/vista/vista.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
