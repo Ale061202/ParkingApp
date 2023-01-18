@@ -1,1 +1,0 @@
-class Abono(Abonado)

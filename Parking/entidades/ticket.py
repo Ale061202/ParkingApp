@@ -1,13 +1,14 @@
+from datetime import datetime
 class Ticket:
 
-    def __init__(self,cliente,pinSalida,fechaEntrada,fechaSalida,coste,idPlaza,pinSalida,ocupado):
-        self.__cliente = cliente
-        self.__fechaEntrada = fechaEntrada
-        self.__fechaSalida = fechaSalida
-        self.__coste = coste
+    def __init__(self, idPlaza, cliente, pin, entrada=datetime.now(), salida=None, costeTicket=None, ocupado=True):
         self.__idPlaza = idPlaza
-        self.__pinSalida = pinSalida
+        self.__cliente = cliente
+        self.__pin = pin
+        self.__entrada = entrada
+        self.__salida = salida
         self.__ocupado = ocupado
+        self.__costeTicket = costeTicket
 
     def __str__(self):
         return f"El vehiculo con matricula {self.cliente.matricula} entra a las {self.fechaEntrada}"

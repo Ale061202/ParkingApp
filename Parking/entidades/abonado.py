@@ -1,4 +1,4 @@
-from Parking.cliente import Cliente
+from Parking.entidades.cliente import Cliente
 class Abonado(Cliente):
 
     def __init__(self,matricula,tipoV,dni,nombre,apellidos,tarjetaCredito,tipoAbono,email,pin,plaza,fechaSuscripcion,fechaCancelacion):
