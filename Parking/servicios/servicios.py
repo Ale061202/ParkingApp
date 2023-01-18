@@ -43,7 +43,7 @@ def config():
     entrada = datetime.now() - timedelta(days=1, hours=3, minutes=45)
     salida = datetime.now() - timedelta(days=1, hours= 2, minutes=24)
     tiempoEstacionado = divmod((salida - entrada).total_seconds(), 60)[0]
-    ocupacion1 = ticket(plazas[2], clienteAbonado, clienteAbonado.pin, datetime.now() - timedelta(days = 12), timedelta(days = 9), 0, False)
-    ocupacion2 = ticket(plazas[0], clienteNormal, 763248, entrada, salida, tiempoEstacionado * plazas[0].plazaTipo.precioPlaza, False)
-    ocupas.append(ocupacion1)
-    ocupas.append(ocupacion2)
+    ocupacion1 = ticket(plazas[2], clienteAbonado, clienteAbonado.pin, datetime.now() - timedelta(days = 12), timedelta(days = 9), 0, True)
+    ocupacion2 = ticket(plazas[0], clienteNormal, 453621, entrada, salida, tiempoEstacionado * plazas[0].plazaTipo.precioPlaza, False)
+    ticket.append(ocupacion1)
+    ticket.append(ocupacion2)
