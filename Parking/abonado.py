@@ -3,16 +3,16 @@ class Abonado(Cliente):
 
     def __init__(self,matricula,tipoV,dni,nombre,apellidos,tarjetaCredito,tipoAbono,email,pin,plaza,fechaSuscripcion,fechaCancelacion):
         super().__init__(matricula,tipoV)
-        self.dni = dni
-        self.nombre = nombre
-        self.apellidos = apellidos
-        self.tarjetaCredito = tarjetaCredito
-        self.tipoAbono = tipoAbono
-        self.email = email
-        self.pin = pin
-        self.plaza = plaza
-        self.fechaSuscripcion = fechaSuscripcion
-        self.fechaCancelacion = fechaCancelacion
+        self.__dni = dni
+        self.__nombre = nombre
+        self.__apellidos = apellidos
+        self.__tarjetaCredito = tarjetaCredito
+        self.__tipoAbono = tipoAbono
+        self.__email = email
+        self.__pin = pin
+        self.__plaza = plaza
+        self.__fechaSuscripcion = fechaSuscripcion
+        self.__fechaCancelacion = fechaCancelacion
 
     @property
     def dni(self):

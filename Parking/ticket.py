@@ -1,13 +1,13 @@
 class Ticket:
 
     def __init__(self,cliente,pinSalida,fechaEntrada,fechaSalida,coste,idPlaza,pinSalida,ocupado):
-        self.cliente = cliente
-        self.fechaEntrada = fechaEntrada
-        self.fechaSalida = fechaSalida
-        self.coste = coste
-        self.idPlaza = idPlaza
-        self.pinSalida = pinSalida
-        self.ocupado = ocupado
+        self.__cliente = cliente
+        self.__fechaEntrada = fechaEntrada
+        self.__fechaSalida = fechaSalida
+        self.__coste = coste
+        self.__idPlaza = idPlaza
+        self.__pinSalida = pinSalida
+        self.__ocupado = ocupado
 
     def __str__(self):
         return f"El vehiculo con matricula {self.cliente.matricula} entra a las {self.fechaEntrada}"

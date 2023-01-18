@@ -1,8 +1,8 @@
 class Cliente:
 
     def __init__(self,matricula, tipoV):
-        self.matricula = matricula
-        self.tipoV = tipoV
+        self.__matricula = matricula
+        self.__tipoV = tipoV
 
     def __str__(self):
         return '{} con matricula {}'.format(self.tipoV,self.matricula)
