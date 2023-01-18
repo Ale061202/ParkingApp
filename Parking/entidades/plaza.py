@@ -1,10 +1,11 @@
 from Parking.entidades.enum.estadoPlaza import EstadoPlaza
 class Plaza:
 
-    def __init__(self,id,reservado,estadoPlaza = EstadoPlaza.LIBRE):
+    def __init__(self,id,reservado,plazaTipo,estadoPlaza = EstadoPlaza.LIBRE):
         self.__id = id
         self.__reservado = reservado
         self.__estadoPlaza = estadoPlaza
+        self.__plazaTipo = plazaTipo
 
     @property
     def id(self):
@@ -29,3 +30,11 @@ class Plaza:
     @estadoPlaza.setter
     def estadoPlaza(self,estadoPlaza):
         self.__estadoPlaza = estadoPlaza
+
+    @property
+    def plazaTipo(self):
+        return self.__plazaTipo
+
+    @plazaTipo.setter
+    def plazaTipo(self,plazaTipo):
+        self.__plazaTipo = plazaTipo
