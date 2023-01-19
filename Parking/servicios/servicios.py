@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import pickle
 
 from Parking.entidades import abono, cliente, abonado, ticket, plaza
 from Parking.entidades.enum import tipoV, estadoPlaza
@@ -7,11 +8,17 @@ from Parking.entidades.plazaTipo import plazaTipo
 
 def config():
 
-    numPlazas = 100
+    open("persistencia/cliente.pickle","w").close()
+    open("persistencia/abono.pickle", "w").close()
+    open("persistencia/plaza.pickle", "w").close()
+    open("persistencia/plazaTipo.pickle", "w").close()
+    open("persistencia/ticket.pickle", "w").close()
+
+    numeroPlazas = 100
     plazasTurismos = plazaTipo(tipoV.TURISMO, 0.12, 70)
     plazasMotos = plazaTipo(tipoV.MOTOCICLETA, 0.08, 15)
     plazasMovilidad = plazaTipo(tipoV.MOVILIDADREDUCIDA, 0.10, 15)
-    tiposPlazas = [plazasTurismos, plazasMotos, plazasMovilidad]
+    tiposDePlazas = [plazasTurismos, plazasMotos, plazasMovilidad]
     plazas = []
     tickets = []
     clientes = []
@@ -27,10 +34,18 @@ def config():
     abonos.append(semestral)
     abonos.append(anual)
 
+    pickleAbonos = open("persistencia/abono.pickle","wb")
+    pickle.dump(abonos, pickleAbonos)
+    pickleAbonos.close()
 
-    for tipo in tiposPlazas:
+    picklePlazaTipo = open("persistencia/plazaTipo","wb")
+    pickle.dump(tiposDePlazas,picklePlazaTipo)
+    picklePlazaTipo.close()
+
+
+    for tipo in tiposDePlazas:
         precio += 1000
-        tipo.numPlazas = int(numPlazas * (tipo.porcentajePlazas / 100))
+        tipo.numPlazas = int(numeroPlazas * (tipo.porcentajePlazas / 100))
         for i in range(tipo.numPlazas):
             plazas.append(plaza(precio + i, tipo))
 
@@ -38,7 +53,7 @@ def config():
     clienteAbonado = abonado("123A", tipoV.TURISMO, "77941903D", "Alejandro", "Fernandez", "alejandro@gmail.com", "789123456789", semestral, datetime.now() - timedelta(days = 30), datetime.now() + timedelta(days = 180), True, plazas[2], 123456)
     clientes.append(clienteNormal)
     clientes.append(clienteAbonado)
-    plazas[3].estado = estadoPlaza.ABONOLIBRE
+    plazas[2].estado = estadoPlaza.ABONOLIBRE
 
     entrada = datetime.now() - timedelta(days=1, hours=3, minutes=45)
     salida = datetime.now() - timedelta(days=1, hours= 2, minutes=24)
@@ -47,3 +62,15 @@ def config():
     ocupacion2 = ticket(plazas[0], clienteNormal, 453621, entrada, salida, tiempoEstacionado * plazas[0].plazaTipo.precioPlaza, False)
     ticket.append(ocupacion1)
     ticket.append(ocupacion2)
+
+    picklePlaza = open("persistencia/plaza.pickle","wb")
+    pickle.dump(plazas,picklePlaza)
+    picklePlaza.close()
+
+    pickleTicket = open("persistencia/ticker.pickle","wb")
+    pickle.dump(tickets,pickleTicket)
+    pickleTicket.close()
+
+    pickleCliente = open("persistencia/cliente.pickle","wb")
+    pickle.dump(clientes,pickleCliente)
+    pickleCliente.close()
