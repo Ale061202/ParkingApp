@@ -1,18 +1,19 @@
 from Parking.entidades.cliente import Cliente
 class Abonado(Cliente):
 
-    def __init__(self,matricula,tipoV,dni,nombre,apellidos,tarjetaCredito,tipoAbono,email,pin,plaza,fechaSuscripcion,fechaCancelacion):
+    def __init__(self,matricula,tipoV,activo,dni,nombre,apellidos,tarjetaCredito,abono,email,pin,plaza,fechaSuscripcion,fechaCancelacion):
         super().__init__(matricula,tipoV)
         self.__dni = dni
         self.__nombre = nombre
         self.__apellidos = apellidos
         self.__tarjetaCredito = tarjetaCredito
-        self.__tipoAbono = tipoAbono
+        self.__abono = abono
         self.__email = email
         self.__pin = pin
         self.__plaza = plaza
         self.__fechaSuscripcion = fechaSuscripcion
         self.__fechaCancelacion = fechaCancelacion
+        self.__activo = activo
 
     @property
     def dni(self):
@@ -47,12 +48,12 @@ class Abonado(Cliente):
         self.__tarjetaCredito = tarjetaCredito
 
     @property
-    def tipoAbono(self):
-        return self.__tipoAbono
+    def abono(self):
+        return self.__abono
 
-    @tipoAbono.setter
-    def tipoAbono(self, tipoAbono):
-        self.__tipoAbono = tipoAbono
+    @abono.setter
+    def abono(self, abono):
+        self.__abono = abono
 
     @property
     def email(self):
@@ -93,3 +94,11 @@ class Abonado(Cliente):
     @fechaCancelacion.setter
     def fechaCancelacion(self, fechaCancelacion):
         self.__fechaCancelacion = fechaCancelacion
+
+    @property
+    def activo(self):
+        return self.__activo
+
+    @activo.setter
+    def activo(self,activo):
+        self.__activo = activo

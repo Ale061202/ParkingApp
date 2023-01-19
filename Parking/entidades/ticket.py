@@ -1,25 +1,25 @@
 from datetime import datetime
 class Ticket:
 
-    def __init__(self, idPlaza, cliente, pin, entrada=datetime.now(), salida=None, costeTicket=None, ocupado=True):
-        self.__idPlaza = idPlaza
+    def __init__(self, plaza, cliente, pin, entrada=datetime.now(), salida=None, coste=None, ocupado=True):
+        self.__idPlaza = plaza
         self.__cliente = cliente
         self.__pin = pin
         self.__entrada = entrada
         self.__salida = salida
         self.__ocupado = ocupado
-        self.__costeTicket = costeTicket
+        self.__costeTicket = coste
 
     def __str__(self):
         return f"El vehiculo con matricula {self.cliente.matricula} entra a las {self.fechaEntrada}"
 
     @property
-    def idPlaza(self):
-        return self.__idPlaza
+    def plaza(self):
+        return self.__plaza
 
-    @idPlaza.setter
-    def idPlaza(self, idPlaza):
-        self.__idPlaza = idPlaza
+    @plaza.setter
+    def plaza(self, plaza):
+        self.__plaza = plaza
 
     @property
     def cliente(self):
