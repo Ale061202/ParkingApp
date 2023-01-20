@@ -237,9 +237,9 @@ def principal():
                         if len(aCaducar) == 0: print("No hay ningún cliente que su abono vaya a caducar en ese mes.")
 
                     elif submenu2 == 2:
-                        aCaducar = [cliente for cliente in clientes if isinstance(cliente, Abonado) and cliente.fechaCancelacion > datetime.now() and cliente.fechaCancelacion < datetime.now() + timedelta(days = 12)]
+                        aCaducar = [cliente for cliente in clientes if isinstance(cliente, Abonado) and cliente.fechaCancelacion > datetime.now() and cliente.fechaCancelacion < datetime.now() + timedelta(days = 10)]
                         abonadoQueCaduca(aCaducar)
-                        if len(aCaducar) == 0: print("No hay ningún cliente que su abono vaya a caducar en 12 días.")
+                        if len(aCaducar) == 0: print("No hay ningún cliente que su abono vaya a caducar en 10 días.")
 
 mainThread = Thread(target=principal)
 
