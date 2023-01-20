@@ -23,7 +23,7 @@ Después de terminar la creación de las entidades, se hacen una serie de funcio
 - Abonos: con este método damos de alta a un cliente pidiendole sus datos, y dependiendo de su abono se le cobrara un precio mayor o menor. También puedes modificar algún dato personal de abonado, y también si se puede dar de alta a un cliente se puede dar de baja a un abonado pero no se borraran sus datos.
 - Caducidad de los abonos: introducimos un mes y el programa nos informará que abonos caducan este mes.
 
-En un posible futuro se podrá añadir más funciones, espero que les sirva de ayuda.
+Y en un posible futuro se podrá añadir más funciones, espero que les sirva de ayuda.
 
 ## **Tecnología utilizada**
 
