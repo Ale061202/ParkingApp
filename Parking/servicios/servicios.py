@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-import pickle
+
 
 from Parking.entidades import abono, cliente, abonado, ticket, plaza
 from Parking.entidades.enum import tipoV, estadoPlaza
@@ -7,12 +7,6 @@ from Parking.entidades.plazaTipo import plazaTipo
 
 
 def config():
-
-    open("persistencia/cliente.pickle","w").close()
-    open("persistencia/abono.pickle", "w").close()
-    open("persistencia/plaza.pickle", "w").close()
-    open("persistencia/plazaTipo.pickle", "w").close()
-    open("persistencia/ticket.pickle", "w").close()
 
     numeroPlazas = 100
     plazasTurismos = plazaTipo(tipoV.TURISMO, 0.12, 70)
@@ -34,14 +28,6 @@ def config():
     abonos.append(semestral)
     abonos.append(anual)
 
-    pickleAbonos = open("persistencia/abono.pickle","wb")
-    pickle.dump(abonos, pickleAbonos)
-    pickleAbonos.close()
-
-    picklePlazaTipo = open("persistencia/plazaTipo","wb")
-    pickle.dump(tiposDePlazas,picklePlazaTipo)
-    picklePlazaTipo.close()
-
 
     for tipo in tiposDePlazas:
         precio += 1000
@@ -62,15 +48,3 @@ def config():
     ocupacion2 = ticket(plazas[0], clienteNormal, 453621, entrada, salida, tiempoEstacionado * plazas[0].plazaTipo.precioPlaza, False)
     ticket.append(ocupacion1)
     ticket.append(ocupacion2)
-
-    picklePlaza = open("persistencia/plaza.pickle","wb")
-    pickle.dump(plazas,picklePlaza)
-    picklePlaza.close()
-
-    pickleTicket = open("persistencia/ticker.pickle","wb")
-    pickle.dump(tickets,pickleTicket)
-    pickleTicket.close()
-
-    pickleCliente = open("persistencia/cliente.pickle","wb")
-    pickle.dump(clientes,pickleCliente)
-    pickleCliente.close()
