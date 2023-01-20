@@ -2,7 +2,7 @@ from datetime import datetime
 class Ticket:
 
     def __init__(self, plaza, cliente, pin, entrada=datetime.now(), salida=None, coste=None, ocupado=True):
-        self.__idPlaza = plaza
+        self.__plaza = plaza
         self.__cliente = cliente
         self.__pin = pin
         self.__entrada = entrada
